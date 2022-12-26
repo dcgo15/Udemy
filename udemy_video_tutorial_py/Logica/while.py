@@ -1,7 +1,9 @@
 while True:
-    resposta = input("Qual capital da coreia do sul?:")
+    capital = input("Qual a capital da Russia?:").lower()
 
-    if resposta == "seul":
+    if capital == "moscou":
+        print("Voce acertou!")
         break
 
-    
+    else:
+        print("Errou")

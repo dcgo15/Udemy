@@ -1,3 +1,3 @@
-lista = ["boneca", "carro", "bola"]
-
-print(len(lista))
+brinquedos = ["boneca", "carro", "bola"]
+brinquedos.remove("carro")
+print(len(brinquedos))

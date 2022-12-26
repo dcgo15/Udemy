@@ -1,28 +1,28 @@
 from tkinter import *
 
 
-def App1():
+def App():
     app = Tk()
-    app.title("Janela 1")
+    app.title("App")
 
-    def App2():
+
+    def app2():
         app.destroy()
-
         app2 = Tk()
-        app2.title("Janela 2")
+        app2.title("app2")
 
-        Label(app2, text="Janela 2").pack()
+        def app_novo():
+            app2.destroy()
+            App()
 
-        Button(app2, text="Voltar", command=App1).pack()
+        bt = Button(app2, text="Voltar", command=app_novo).pack()
 
         app2.mainloop()
-        
 
-    Label(app, text="Janela 1").pack()
+    bt = Button(app, text="Ir para app2", command=app2).pack()
 
-    Button(app, text="Ir pra janela 2", command=App2).pack()
-    
     app.mainloop()
 
 
-App1()
+
+App()

@@ -1,6 +1,11 @@
+def ola(nome):
+    print(f"Seu nome é: {nome}")
+
+
+
 def soma(num1, num2):
-    print( num1+20, num2+15)
+    return num1 + 30, num2+50
 
 
 
-soma(30, 20)
+print(soma(10, 20))

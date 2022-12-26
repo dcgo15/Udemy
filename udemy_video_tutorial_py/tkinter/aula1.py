@@ -1,8 +1,10 @@
 from tkinter import *
 
+
 app = Tk()
-app.title("App1")
-app.geometry("200x400")
-app.resizable(0, 0)
+app.title("App")
+app.geometry("300x600")
+app.resizable(False, False)
+app.config(bg="red")
 
 app.mainloop()

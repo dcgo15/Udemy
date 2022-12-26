@@ -1,2 +1,2 @@
-booleans = False
-print(type(booleans))
+var = False
+print(type(var))

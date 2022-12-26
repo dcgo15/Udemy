@@ -1,38 +1,41 @@
 from tkinter import *
 
 app = Tk()
-app.title("App1")
-app.geometry("400x400")
+app.title("App")
+app.geometry("300x600")
 app.resizable(0, 0)
+app.config(bg="red")
+
 
 def login():
-    print("Usuario logado \nEmail", entry.get(), "Senha", entry2.get(), "Mensagem", txt.get("1.0", END))
+    email = em.get()
+    senha = sen.get()
+    mensagem = mens.get("1.0", END)
+
+    print(f"Seu email é: {email} \nSua senha é: {senha} \nSua mensagem é: {mensagem}")
 
 
-lb = Label(app, text="Login", font="arial 20 bold", fg='gray', bg="red")
-lb.pack()
+lb = Label(app, text="LOGIN", bg="red", fg="white", font="Helvetica 20 bold").pack()
 
-lb = Label(app, text="Email", font="arial 10 bold", fg='gray', bg="red")
-lb.pack()
+lb = Label(app, text="Email", bg="red", fg="white", font="Helvetica 10 bold").pack()
 
-entry = Entry(app, font="arial 16 bold", width=10)
-entry.pack()
-
-lb = Label(app, text="Senha", font="arial 10 bold", fg='gray', bg="red")
-lb.pack()
-
-entry2 = Entry(app, font="arial 16 bold", width=10, show="*")
-entry2.pack()
-
-lb = Label(app, text="Mensagem", font="arial 10 bold", fg='gray', bg="red")
-lb.pack()
-
-txt = Text(app, font="arial 2")
-txt.pack()
+em = Entry(app, width=15)
+em.pack()
 
 
-bt = Button(app, text="Logar", command=login)
-bt.pack()
+lb = Label(app, text="Senha", bg="red", fg="white", font="Helvetica 10 bold").pack()
+
+sen= Entry(app, width=15, show="*")
+sen.pack()
+
+lb = Label(app, text="Mensagem", bg="red", fg="white", font="Helvetica 10 bold").pack()
+
+mens= Text(app, width=15)
+mens.pack()
+
+
+bt = Button(app, text="Continuar", bg="red", fg="white", command=login).pack()
 
 
 app.mainloop()
+

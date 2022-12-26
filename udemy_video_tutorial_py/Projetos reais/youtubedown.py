@@ -1,6 +1,7 @@
 from tkinter import *
 from pytube import YouTube
 
+
 link_ = "https://www.youtube.com/watch?v=6QFyxwe9IlY"
 
 
@@ -14,29 +15,26 @@ def baixar():
 
     yt = YouTube(linkk)
 
-    yt_ti = str(yt.title)
-    
-    lb2["text"] = f"Titulo:{yt_ti}"
-    lb3["text"] = f"Link:{linkk}"
+    titulo = yt.title
 
+    lin["text"] = f"Link:{linkk}"
+    nom["text"] = f"Nome:{titulo}"
 
     yt.streams.filter().first().download()
 
-lb = Label(app, text="Youtube downloader", fg="red", font="arial 14 bold").pack()
 
-lb = Label(app, text="Cole o link aqui:", fg="red", font="arial 9 bold").pack()
+lb = Label(app, text="Youtube Downloader",font="arial 15 bold", fg="red").pack()
+
+lb = Label(app, text="Cole o link do vídeo aqui:", fg="red").pack()
 
 link = Entry(app)
 link.pack()
 
-bt = Button(app, text="Baixar",command=baixar).pack()
+bt = Button(app, text="Baixar", fg="red", command=baixar).pack()
 
-
-lb2 = Label(app, text="Titulo:", fg="red", font="arial 6 bold")
-lb2.place(x=20, y=150)
-lb3 = Label(app, text="Link:", fg="red", font="arial 6 bold")
-lb3.place(x=20, y=180)
-
-
+nom = Label(app, text="Nome:", fg="red")
+nom.pack()
+lin = Label(app, text="Link:", fg="red")
+lin.pack()
 
 app.mainloop()

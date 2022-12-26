@@ -1,2 +1,5 @@
-for i in "Olá Mundo":
-    print(i)
+lista = ["banana", "melancia", "uva"]
+
+
+for k in lista:
+    print(k)

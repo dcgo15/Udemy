@@ -1,11 +1,11 @@
-a = 4
-b = a
+a = 10
+b = 8
 
-if b == a:
+if a == b:
     print(True)
 
-elif b != a:
-    print(False)
+elif a > b:
+    print("Sim")
 
 else:
-    print("Error")
+    print(False)

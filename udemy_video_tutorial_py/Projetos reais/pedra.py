@@ -1,143 +1,133 @@
 from tkinter import *
 import random
 
-app = Tk()
-app.title("Pedra, Papel e Tesoura")
-app.geometry("400x400")
-app.resizable(0,0)
+
 
 
 pont_vc = 0
-pont_bot = 0 
+pont_BOT = 0
 
 
-
-#lista = ["Pedra", "Papel", "Tesoura"]
-#escolha = random.choice(lista)
-
+app = Tk()
+app.title("Pedra, Papel e Tesoura")
+app.geometry("400x400")
+app.resizable(0, 0)
 
 def pedra():
     global pont_vc
-    global pont_bot
-
+    global pont_BOT
     
     lista = ["Pedra", "Papel", "Tesoura"]
     escolha = random.choice(lista)
 
-    lb["text"] = f"A escolha foi:{escolha}"
-
-
-    pedra = "pedra"
-
 
     if escolha == "Pedra":
+        escol["text"] = "Robô escolheu:pedra"
         pont_vc += 0
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Empate", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Papel":
+        escol["text"] = "Robô escolheu:papel"
         pont_vc += 0
-        pont_bot += 10
+        pont_BOT += 10
 
-        print("Bot Ganhou", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Tesoura":
+        escol["text"] = "Robô escolheu:tesoura"
         pont_vc += 10
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Voce Ganhou", pont_vc, pont_bot)
-
-
-    lb3["text"] = pont_vc
-    lb4["text"] = pont_bot
-
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
+    
 
 def papel():
-
     global pont_vc
-    global pont_bot
+    global pont_BOT
     
     lista = ["Pedra", "Papel", "Tesoura"]
     escolha = random.choice(lista)
 
-    lb["text"] = f"A escolha foi:{escolha}"
-
-    papel = "papel"
 
     if escolha == "Pedra":
+        escol["text"] = "Robô escolheu:pedra"
         pont_vc += 10
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Voce ganhou", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Papel":
+        escol["text"] = "Robô escolheu:papel"
         pont_vc += 0
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Empate", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Tesoura":
+        escol["text"] = "Robô escolheu:tesoura"
         pont_vc += 0
-        pont_bot += 10
+        pont_BOT += 10
 
-        print("Bot Ganhou", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
-
-    lb3["text"] = pont_vc
-    lb4["text"] = pont_bot
-    
-
-def tes():
+def tesoura():
     global pont_vc
-    global pont_bot
+    global pont_BOT
     
     lista = ["Pedra", "Papel", "Tesoura"]
     escolha = random.choice(lista)
 
-    lb["text"] = f"A escolha foi:{escolha}"
-
-    tesoura = "tesoura"
 
     if escolha == "Pedra":
+        escol["text"] = "Robô escolheu:pedra"
         pont_vc += 0
-        pont_bot += 10
+        pont_BOT += 10
 
-        print("Bot ganhou", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Papel":
+        escol["text"] = "Robô escolheu:papel"
         pont_vc += 10
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Voce Ganhou", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
     elif escolha == "Tesoura":
+        escol["text"] = "Robô escolheu:tesoura"
         pont_vc += 0
-        pont_bot += 0
+        pont_BOT += 0
 
-        print("Empate", pont_vc, pont_bot)
+        pontos_vc["text"] = f"{pont_vc}"
+        pontos_bot["text"] = f"{pont_BOT}"
 
-    lb3["text"] = pont_vc
-    lb4["text"] = pont_bot
+lb = Label(app, text="Pedra , Papel e Tesoura", font="Arial 15 bold").pack()
 
-
-lb5 = Label(app, text="você:", fg="black", font="arial 12 bold").place(x=10, y=10)
-lb2 = Label(app, text="Bot:", fg="black", font="arial 12 bold").place(x=300, y=10)
-lb3 = Label(app, text="0", fg="black", font="arial 30 bold")
-lb3.place(x=10, y=80)
-lb4= Label(app, text="0", fg="black", font="arial 30 bold")
-lb4.place(x=300, y=80)
+lb = Label(app, text="Você:", font="Arial 10 bold").place(x=10, y=50)
+lb = Label(app, text="Robô:", font="Arial 10 bold").place(x=250, y=50)
 
 
-lb = Label(app, text="", font="arial 8 bold")
-lb.place(x=100, y=130)
+pontos_vc = Label(app, text="0", font="Arial 30 bold")
+pontos_vc.place(x=10, y=90)
+pontos_bot = Label(app, text="0", font="Arial 30 bold")
+pontos_bot.place(x=250, y=90)
+
+escol = Label(app, text="", font="arial 13 bold")
+escol.place(x=150, y=150)
 
 
-
-bt = Button(app, text="Pedra", width=10, command=pedra).place(x=10,y=200)
-bt = Button(app, text="Papel", width=10, command=papel).place(x=150,y=200)
-bt = Button(app, text="Tesoura", width=10,command=tes).place(x=310,y=200)
-
+bt = Button(app, text="Pedra", command=pedra).place(x=10, y=250)
+bt2 = Button(app, text="Papel",command=papel).place(x=80, y=250)
+bt3 = Button(app, text="Tesoura",command=tesoura).place(x=150, y=250)
 
 
 app.mainloop()
